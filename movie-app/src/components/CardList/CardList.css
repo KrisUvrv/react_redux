@@ -1,0 +1,14 @@
+.card_grid {
+    margin-top: 80px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+    gap: 24px;
+}
+
+.not-found-message {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 100px auto;
+}
