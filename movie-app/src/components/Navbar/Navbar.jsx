@@ -1,22 +1,18 @@
-import './Navbar.css';
+import styles from './Navbar.module.css';
+import LoginButton from "../LoginButton/LoginButton.jsx";
 
-function Navbar({text, onClick }) {
-
+function Navbar() {
   return (
-    <div className='navbar'>
+    <div className={styles.navbar}>
       <img src="/logo.svg" alt="logo"/>
-      <div className='navbar__links'>
-        <a href="#" className='link__active'>Поиск фильмов</a>
+      <div className={styles['navbar__links']}>
+        <a href="#" className={styles['link__active']}>Поиск фильмов</a>
         <a href="#">
           Мои фильмы
           <img src="/counter.svg" alt="counter"/></a>
-        <a href="#">
-          Войти
-          <img src="/Login.svg" alt="Login"/>
-        </a>
+        <LoginButton/>
       </div>
     </div>
-
   )
 }
 

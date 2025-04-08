@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Search from "./components/Search/Search.jsx";
 import {useState} from "react";
 import CardList from "./components/CardList/CardList.jsx";
+import LoginForm from "./components/LoginForm/LoginForm.jsx";
+import {UserContextProvider} from "./context/user.context.jsx";
 
 const INITIAL_DATA = [
   {id: 1, poster: 'public/cards/card1.jpg', title: 'Black Widow', rating: '324',},
@@ -18,18 +20,22 @@ const INITIAL_DATA = [
 ];
 
 function App() {
+
   const [cards] = useState(INITIAL_DATA);
 
   return (
-    <div className='app'>
-      <Navbar/>
-      <Heading size='large'>Поиск</Heading>
-      <Paragraph size='small'>
-        Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.
-      </Paragraph>
-      <Search/>
-      <CardList cards={cards}/>
-    </div>
+    <UserContextProvider>
+      <div className='app'>
+        <Navbar/>
+        <Heading size='large'>Поиск</Heading>
+        <Paragraph size='small'>
+          Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.
+        </Paragraph>
+        <Search/>
+        <CardList cards={cards}/>
+        <LoginForm/>
+      </div>
+    </UserContextProvider>
   )
 }
 
