@@ -1,4 +1,4 @@
-import './Card.css';
+import styles from './Card.module.css';
 import {useState} from "react";
 
 function Card({poster, title, rating}) {
@@ -10,19 +10,19 @@ const toggleFavorite = () => {
 }
 
   return (
-    <div className='card'>
-      <div className='card__poster'>
-        <div className='card__rating'>
+    <div className={styles.card}>
+      <div className={styles.card__poster}>
+        <div className={styles.card__rating}>
           <img src="/star.svg" alt="rating"/>
           <span>{rating}</span>
         </div>
         <img src={poster} alt="poster"/>
       </div>
 
-      <h2 className="card__title">{title}</h2>
-      <button className='card__button' onClick={toggleFavorite}>
+      <h2 className={styles.card__title}>{title}</h2>
+      <button className={styles.card__button} onClick={toggleFavorite}>
         <img src={isFavorite ? '/liked.svg' : 'like.svg'} alt="like"/>
-        {isFavorite ? <span className='liked'>В избранном</span> : <span>В избранное</span>}
+        {isFavorite ? <span className={styles.liked}>В избранном</span> : <span>В избранное</span>}
       </button>
     </div>
   )

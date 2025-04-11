@@ -1,12 +1,13 @@
-.card_grid {
+.cardGrid {
     margin-top: 80px;
+    margin-bottom: 50px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
     gap: 24px;
 }
 
-.not-found-message {
+.notFoundMessage {
     display: flex;
     flex-direction: column;
     text-align: center;

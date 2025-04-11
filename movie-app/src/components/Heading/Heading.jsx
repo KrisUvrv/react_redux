@@ -1,9 +1,10 @@
-import './Heading.css';
+import styles from './Heading.module.css';
+import cn from "classnames";
 
-function Heading({children}) {
+function Heading({children, size}) {
 
   return (
-    <h1 className='heading ${size}'>{children}</h1>
+    <h1 className={cn(styles.heading, styles[size])}>{children}</h1>
   )
 }
 
